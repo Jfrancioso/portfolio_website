@@ -16,7 +16,7 @@ animateItems.forEach(item => {
 });
 
 const cat = document.createElement("img");
-cat.src = "img/MarsOnMoon.png";
+cat.src = "img/MarsOnMoon.PNG";
 cat.style.position = "fixed";
 cat.style.width = "100px";
 cat.style.top = "70px"; // adjust as needed
