@@ -23,6 +23,13 @@ cat.style.top = "70px"; // adjust as needed
 cat.style.right = "20px"; // adjust as needed
 document.body.appendChild(cat);
 
+const catSound = new Audio("audio/362652__trngle__cat-meow.wav"); // create an Audio object
+
+cat.addEventListener("click", () => {
+    cat.classList.toggle("hidden");
+    catSound.play(); // play the cat sound when the user clicks on the cat image
+});
+
 let direction = 1;
 let position = -100;
 
@@ -61,7 +68,6 @@ setInterval(() => {
     changeCatColor();
 }, 3000);
 
-setInterval(animateCat, 10);
 const title = document.querySelector('.home-content h1');
 
 title.addEventListener('mouseover', () => {
@@ -79,9 +85,8 @@ menuIcon.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
-
 /* social links highlighting */
-const contactLink = document.querySelector('#contact-link');
+const contactLink = document.querySelector('#contact a');
 const socialLinks = document.querySelectorAll('.social-links a');
 
 contactLink.addEventListener('click', (event) => {
