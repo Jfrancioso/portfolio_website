@@ -1,997 +1,1002 @@
-                               :root {
-                                  --main-font: 'Poppins', sans-serif;
-                                  --text-color: #333;
-                                  --primary-color: #3a3a3a;
-                                  --secondary-color: #f8f8f8;
-                                  --accent-color: #f2463a;
-                                  --border-radius: 5px;
-                              }
-                              
-                              body {
-                                  font-family: var(--main-font);
-                                  font-size: 16px;
-                                  color: var(--text-color);
-                                  line-height: 1.5;
-                                  background-color: var(--secondary-color);
-                                  margin: 0;
-                                  padding: 0;
-                              }
-                              
-                              h1,
-                              h2,
-                              h3,
-                              h4,
-                              h5,
-                              h6 {
-                                  font-weight: 700;
-                                  margin: 0;
-                                  padding: 0;
-                              }
-                              
-                              a {
-                                  color: var(--accent-color);
-                                  text-decoration: none;
-                                  transition: color 0.3s ease-in-out;
-                              }
-                              
-                              a:hover {
-                                  color: darken(var(--accent-color), 10%);
-                              }
-                              
-                              ul {
-                                  list-style: none;
-                                  margin: 0;
-                                  padding: 0;
-                              }
-                              
-                              .container {
-                                  max-width: 1200px;
-                                  margin: 0 auto;
-                                  padding: 0 30px;
-                              }
-                              /* Header */
-                              
-                              header {
-                                  background-color: var(--secondary-color);
-                                  position: fixed;
-                                  width: 100%;
-                                  z-index: 1;
-                              }
-                              
-                              nav {
-                                  display: flex;
-                                  justify-content: space-between;
-                                  align-items: center;
-                                  max-width: 1200px;
-                                  margin: 0 auto;
-                                  padding: 15px;
-                              }
-                              
-                              nav a {
-                                  color: var(--text-color);
-                                  text-decoration: none;
-                                  font-weight: bold;
-                                  font-size: 18px;
-                              }
-                              
-                              .nav-links {
-                                  display: flex;
-                                  justify-content: space-between;
-                                  align-items: center;
-                              }
-                              
-                              .nav-links li {
-                                  margin-right: 20px;
-                              }
-                              
-                              .nav-links li:last-of-type {
-                                  margin-right: 0;
-                              }
-                              
-                              .hero-section {
-                                  min-height: 90vh;
-                                  display: flex;
-                                  justify-content: center;
-                                  align-items: center;
-                                  background-color: var(--primary-color);
-                                  color: #fff;
-                                  position: relative;
-                              }
-                              
-                              .hero-section:before {
-                                  content: "";
-                                  display: block;
-                                  position: absolute;
-                                  top: 0;
-                                  right: 0;
-                                  bottom: 0;
-                                  left: 0;
-                                  background: rgba(0, 0, 0, 0.3);
-                              }
-                              
-                              .hero-content {
-                                  max-width: 800px;
-                                  text-align: center;
-                                  z-index: 2;
-                              }
-                              
-                              .hero-heading {
-                                  font-size: 5rem;
-                                  margin-bottom: 20px;
-                              }
-                              
-                              .hero-subheading {
-                                  font-size: 2rem;
-                                  margin-bottom: 30px;
-                              }
-                              
-                              .hero-btn {
-                                  margin-top: 40px;
-                              }
-                              
-                              .work-gallery {
-                                  margin-top: 3rem;
-                              }
-                              
-                              .work-item {
-                                  position: relative;
-                                  overflow: hidden;
-                                  border-radius: 5px;
-                              }
-                              
-                              .work-item img {
-                                  display: block;
-                                  width: 100%;
-                                  height: auto;
-                                  transition: transform 0.3s ease-in-out;
-                              }
-                              
-                              .work-item:hover img {
-                                  transform: scale(1.1);
-                              }
-                              
-                              .work-item .work-item-overlay {
-                                  position: absolute;
-                                  top: 0;
-                                  left: 0;
-                                  width: 100%;
-                                  height: 100%;
-                                  display: flex;
-                                  justify-content: center;
-                                  align-items: center;
-                                  background-color: rgba(0, 0, 0, 0.8);
-                                  opacity: 0;
-                                  transition: opacity 0.3s ease-in-out;
-                              }
-                              
-                              .work-item-wrapper {
-                                  display: grid;
-                                  grid-template-columns: repeat(3, minmax(0, 1fr));
-                                  grid-gap: 1rem;
-                                  margin-top: 2rem;
-                              }
-                              
-                              .work-item:hover .work-item-overlay {
-                                  opacity: 1;
-                              }
-                              
-                              .work-item .overlay-content {
-                                  color: #fff;
-                                  text-align: center;
-                              }
-                              
-                              .work-item .overlay-content h3 {
-                                  font-size: 2rem;
-                                  margin-bottom: 1rem;
-                              }
-                              
-                              .work-item .overlay-content p {
-                                  font-size: 1.2rem;
-                                  margin-bottom: 2rem;
-                              }
-                              
-                              .work-item .work-item-wrapper {
-                                  display: grid;
-                                  grid-template-columns: repeat(3, 1fr);
-                                  grid-gap: 1rem;
-                                  margin-top: 2rem;
-                              }
-                              
-                              .work-info {
-                                  background-color: #fff;
-                                  padding: 1.5rem;
-                                  border-radius: 5px;
-                                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                                  text-align: center;
-                              }
-                              
-                              .work-info h4 {
-                                  font-size: 1.5rem;
-                                  margin-bottom: 0.5rem;
-                              }
-                              
-                              .work-info p {
-                                  font-size: 1.2rem;
-                                  color: #555;
-                                  margin-bottom: 1rem;
-                              }
-                              
-                              .work-info a {
-                                  display: inline-block;
-                                  background-color: #007bff;
-                                  color: #fff;
-                                  text-decoration: none;
-                                  padding: 0.5rem 1.5rem;
-                                  border-radius: 5px;
-                                  transition: background-color 0.3s ease-in-out;
-                              }
-                              
-                              .work-info a:hover {
-                                  background-color: #0069d9;
-                              }
-                              /* Contact section */
-                              
-                              .contact {
-                                  min-height: calc(100vh - 60px);
-                                  display: flex;
-                                  justify-content: center;
-                                  align-items: center;
-                                  background-color: var(--secondary-color);
-                                  padding: 2rem;
-                                  flex-direction: column;
-                              }
-                              
-                              .contact-form {
-                                  max-width: 600px;
-                                  margin-bottom: 2rem;
-                                  display: flex;
-                                  flex-direction: column;
-                              }
-                              
-                              .contact-form label {
-                                  margin-bottom: 0.5rem;
-                              }
-                              
-                              .contact-form input,
-                              .contact-form textarea {
-                                  padding: 0.5rem;
-                                  border-radius: var(--border-radius);
-                                  border: none;
-                                  margin-bottom: 1rem;
-                              }
-                              
-                              .contact-form textarea {
-                                  height: 150px;
-                              }
-                              
-                              .contact-form input[type="submit"] {
-                                  background-color: var(--primary-color);
-                                  color: #fff;
-                                  border: none;
-                                  padding: 0.5rem 1.5rem;
-                                  border-radius: var(--border-radius);
-                                  cursor: pointer;
-                                  transition: background-color 0.3s ease-in-out;
-                              }
-                              
-                              .contact-form input[type="submit"]:hover {
-                                  background-color: darken(var(--primary-color), 10%);
-                              }
-                              
-                              .contact-info {
-                                  display: flex;
-                                  justify-content: center;
-                                  align-items: center;
-                              }
-                              
-                              .contact-info__item {
-                                  margin: 0 1rem;
-                                  text-align: center;
-                              }
-                              
-                              .contact-info__item h4 {
-                                  font-size: 1.2rem;
-                                  margin-bottom: 0.5rem;
-                              }
-                              
-                              .contact-info__item p {
-                                  font-size: 1rem;
-                                  margin-bottom: 0.5rem;
-                              }
-                              
-                              .contact-info__item svg {
-                                  height: 40px;
-                                  width: 40px;
-                                  margin-bottom: 0.5rem;
-                              }
-                              
-                              .contact-info__item svg path {
-                                  fill: var(--primary-color);
-                              }
-                              /* Footer */
-                              
-                              footer {
-                                  background-color: var(--primary-color);
-                                  color: #fff;
-                                  text-align: center;
-                                  padding: 2rem;
-                              }
-                              
-                              footer p {
-                                  font-size: 1.2rem;
-                                  margin-bottom: 0.5rem;
-                              }
-                              
-                              footer a {
-                                  color: #fff;
-                                  text-decoration: none;
-                                  transition: color 0.3s ease-in-out;
-                              }
-                              
-                              footer a:hover {
-                                  color: #f5f5f5;
-                              }
-                              /* Home section */
-                              
-                              .home {
-                                  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/smokymountains.jpg') center/cover no-repeat fixed;
-                                  height: 100vh;
-                                  display: flex;
-                                  justify-content: center;
-                                  align-items: center;
-                                  text-align: center;
-                                  color: #fff;
-                                  font-size: 3rem;
-                                  text-shadow: 2px 2px 4px #000000;
-                              }
-                              
-                              .home-content {
-                                  padding-top: 100px;
-                              }
-                              
-                              .home-content {
-                                  max-width: 800px;
-                                  margin: 0 auto;
-                              }
-                              
-                              .home h1 {
-                                  font-size: 5rem;
-                                  margin-bottom: 1rem;
-                              }
-                              
-                              .home p {
-                                  font-size: 2rem;
-                                  margin-bottom: 2rem;
-                              }
-                              
-                              .home .btn {
-                                  display: inline-block;
-                                  padding: 1rem 2rem;
-                                  font-size: 2rem;
-                                  background-color: #007bff;
-                                  color: #fff;
-                                  border: none;
-                                  border-radius: 5px;
-                                  cursor: pointer;
-                                  transition: background-color 0.3s ease-in-out;
-                              }
-                              
-                              .home .btn:hover {
-                                  background-color: #0069d9;
-                              }
-                              
-                              .home-text {
-                                  max-width: 600px;
-                                  margin-right: 30px;
-                              }
-                              
-                              .home-heading {
-                                  font-size: 3rem;
-                                  margin-bottom: 30px;
-                                  line-height: 1.2;
-                                  color: var(--tertiary-color);
-                              }
-                              
-                              .home-subheading {
-                                  font-size: 1.5rem;
-                                  margin-bottom: 30px;
-                                  line-height: 1.5;
-                                  color: var(--text-color);
-                              }
-                              
-                              .home-btn {
-                                  margin-top: 20px;
-                              }
-                              
-                              .project-wrapper {
-                                  display: grid;
-                                  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                                  grid-gap: 1rem;
-                                  margin-top: 3rem;
-                              }
-                              
-                              .project-card {
-                                  background-color: #fff;
-                                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                                  padding: 1.5rem;
-                                  text-align: center;
-                                  border-radius: 5px;
-                                  overflow: hidden;
-                              }
-                              
-                              .project-card img {
-                                  width: 100%;
-                                  height: auto;
-                                  margin-bottom: 1rem;
-                              }
-                              
-                              .project-card h3 {
-                                  font-size: 1.5rem;
-                                  margin-bottom: 0.5rem;
-                              }
-                              
-                              .project-card p {
-                                  font-size: 1.2rem;
-                                  color: #555;
-                                  margin-bottom: 1rem;
-                              }
-                              
-                              .project-card a {
-                                  display: inline-block;
-                                  background-color: #007bff;
-                                  color: #fff;
-                                  text-decoration: none;
-                                  padding: 0.5rem 1.5rem;
-                                  border-radius: 5px;
-                                  transition: background-color 0.3s ease-in-out;
-                              }
-                              
-                              .project-card a:hover {
-                                  background-color: #0069d9;
-                              }
-                              
-                              .project-card:hover {
-                                  transform: translateY(-10px);
-                                  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-                              }
-                              
-                              .project-card:hover a {
-                                  background-color: #0056b3;
-                              }
-                              
-                              .project-card:hover p {
-                                  color: #333;
-                              }
-                              
-                              .project-card__overlay {
-                                  opacity: 0;
-                                  position: absolute;
-                                  top: 0;
-                                  left: 0;
-                                  right: 0;
-                                  bottom: 0;
-                                  background-color: rgba(0, 0, 0, 0.5);
-                                  display: flex;
-                                  justify-content: center;
-                                  align-items: center;
-                                  transition: opacity 0.3s ease-in-out;
-                              }
-                              
-                              .project-card__overlay:hover {
-                                  opacity: 1;
-                              }
-                              
-                              .project-card__overlay-text {
-                                  color: #fff;
-                                  font-size: 1.2rem;
-                                  text-align: center;
-                              }
-                              /* About section */
-                              
-                              .about {
-                                  padding: 25px 0;
-                                  background-color: #fff;
-                              }
-                              
-                              #about h2 {
-                                  padding-top: 120px;
-                                  /* Adjust this value as needed */
-                              }
-                              
-                              .about-content {
-                                  display: flex;
-                                  justify-content: space-between;
-                                  align-items: center;
-                                  flex-wrap: wrap;
-                                  margin-top: 50px;
-                              }
-                              
-                              .about-text {
-                                  flex: 1;
-                                  margin-right: 30px;
-                              }
-                              
-                              .about-image {
-                                  flex: 1;
-                                  max-width: 400px;
-                                  margin-top: 30px;
-                              }
-                              
-                              .about-image img {
-                                  width: 100%;
-                                  height: auto;
-                              }
-                              
-                              .about-content {
-                                  display: flex;
-                                  justify-content: space-between;
-                                  align-items: center;
-                                  flex-wrap: wrap;
-                                  margin-top: 50px;
-                                  flex-direction: row-reverse;
-                                  /* Reverse the order of flex items */
-                              }
-                              
-                              .about-image {
-                                  flex: 1;
-                                  max-width: 40%;
-                                  margin-top: 30px;
-                                  margin-left: 30px;
-                                  /* Add some margin to the left */
-                              }
-                              
-                              .section-heading h2 {
-                                  font-size: 3rem;
-                                  margin-bottom: 30px;
-                                  line-height: 1.2;
-                                  color: var(--tertiary-color);
-                              }
-                              
-                              .section-heading p {
-                                  font-size: 1.5rem;
-                                  margin-bottom: 30px;
-                                  line-height: 1.5;
-                                  color: var(--text-color);
-                              }
-                              
-                              .about-text p {
-                                  font-size: 1.2rem;
-                                  color: #555;
-                                  margin-bottom: 1.5rem;
-                              }
-                              /* About section */
-                              
-                              .about-section {
-                                  background-color: #fff;
-                                  padding: 100px 0;
-                              }
-                              
-                              .about-content {
-                                  display: flex;
-                                  justify-content: space-between;
-                                  align-items: center;
-                                  flex-wrap: wrap;
-                              }
-                              
-                              .about-text {
-                                  flex: 1;
-                                  max-width: 600px;
-                              }
-                              
-                              .about-text h2 {
-                                  font-size: 3rem;
-                                  margin-bottom: 30px;
-                                  line-height: 1.2;
-                                  color: var(--primary-color);
-                              }
-                              
-                              .about-text p {
-                                  font-size: 1.2rem;
-                                  margin-bottom: 30px;
-                                  line-height: 1.5;
-                                  color: var(--text-color);
-                              }
-                              
-                              .about-text a {
-                                  display: inline-block;
-                                  padding: 10px 20px;
-                                  background-color: var(--primary-color);
-                                  color: #fff;
-                                  border-radius: var(--border-radius);
-                                  transition: background-color 0.3s ease-in-out;
-                                  text-decoration: none;
-                                  font-size: 1.2rem;
-                              }
-                              
-                              .about-text a:hover {
-                                  background-color: darken(var(--primary-color), 10%);
-                              }
-                              
-                              .about-image {
-                                  flex: 1;
-                                  max-width: 500px;
-                                  margin-top: 50px;
-                              }
-                              
-                              .about-image img {
-                                  width: 100%;
-                                  height: auto;
-                                  border-radius: var(--border-radius);
-                                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                              }
-                              
-                              footer {
-                                  background-color: #222;
-                                  color: #fff;
-                                  padding: 30px 0;
-                              }
-                              
-                              .footer-content {
-                                  display: flex;
-                                  justify-content: space-between;
-                                  align-items: center;
-                              }
-                              
-                              .social-icons a {
-                                  color: #fff;
-                                  font-size: 1.5rem;
-                                  margin-right: 15px;
-                                  transition: color 0.3s ease-in-out;
-                              }
-                              
-                              .social-icons a.highlight {
-                                  transform: scale(1.2);
-                              }
-                              
-                              .social-icons a:hover {
-                                  color: #5b5eff;
-                              }
-                              
-                              .animate {
-                                  opacity: 0;
-                                  transform: translateY(50px);
-                                  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-                              }
-                              
-                              .animate.animated {
-                                  opacity: 1;
-                                  transform: translateY(0);
-                              }
-                              
-                              .home {
-                                  background-color: #f7f7f7;
-                              }
-                              
-                              .home-content {
-                                  color: #fff;
-                              }
-                              
-                              .home-content h1 {
-                                  color: #fff;
-                              }
-                              
-                              .home-content p {
-                                  color: #fff;
-                              }
-                              
-                              .btn {
-                                  background-color: #f2463a;
-                                  color: #fff;
-                              }
-                              
-                              .btn:hover {
-                                  background-color: #ff5a4c;
-                              }
-                              
-                              .cat {
-                                  position: absolute;
-                                  top: 50%;
-                                  left: -50px;
-                                  width: 100px;
-                                  height: 100px;
-                                  background-size: contain;
-                                  animation: cat-walk 10s linear infinite;
-                              }
-                              
-                              @keyframes cat-walk {
-                                  0% {
-                                      transform: translateX(0) scaleX(-1);
-                                  }
-                                  50% {
-                                      transform: translateX(calc(100vw + 100px)) scaleX(-1);
-                                  }
-                                  100% {
-                                      transform: translateX(0) scaleX(-1);
-                                  }
-                              }
-                              
-                              @keyframes wiggle {
-                                  0% {
-                                      transform: rotate(0);
-                                  }
-                                  10% {
-                                      transform: rotate(-10deg);
-                                  }
-                                  20% {
-                                      transform: rotate(10deg);
-                                  }
-                                  30% {
-                                      transform: rotate(-10deg);
-                                  }
-                                  40% {
-                                      transform: rotate(10deg);
-                                  }
-                                  50% {
-                                      transform: rotate(0);
-                                  }
-                              }
-                              /* Mobile Styles */
-                              
-                              .work-item-wrapper {
-                                  display: flex;
-                                  flex-wrap: wrap;
-                                  justify-content: center;
-                              }
-                              
-                              .work-item {
-                                  position: relative;
-                                  width: 100%;
-                                  max-width: 400px;
-                                  height: auto;
-                                  margin: 0 10px 30px;
-                              }
-                              
-                              .work-item img {
-                                  width: 100%;
-                                  height: auto;
-                              }
-                              
-                              .overlay-content {
-                                  position: absolute;
-                                  top: 50%;
-                                  left: 50%;
-                                  transform: translate(-50%, -50%);
-                                  background: rgba(0, 0, 0, 0.8);
-                                  color: #fff;
-                                  padding: 10px;
-                                  text-align: center;
-                                  width: 80%;
-                                  max-width: 600px;
-                              }
-                              
-                              .overlay-content h3 {
-                                  font-size: 1.5rem;
-                                  margin-bottom: 10px;
-                              }
-                              
-                              .overlay-content p {
-                                  font-size: 1rem;
-                                  margin-bottom: 10px;
-                                  word-wrap: break-word;
-                              }
-                              
-                              .overlay-content a {
-                                  font-size: 1rem;
-                                  padding: 10px 20px;
-                                  border: 2px solid #fff;
-                                  text-transform: uppercase;
-                                  letter-spacing: 1px;
-                                  transition: all 0.3s ease;
-                                  display: inline-block;
-                              }
-                              
-                              .overlay-content a:hover {
-                                  background: #fff;
-                                  color: #000;
-                              }
-                              
-                              @media screen and (max-width: 768px) {
-                                  .work-item {
-                                      width: 45%;
-                                      margin: 0 5px 30px;
-                                  }
-                                  .overlay-content {
-                                      font-size: 0.8rem;
-                                      padding: 5px;
-                                  }
-                              }
-                              
-                              @media screen and (max-width: 576px) {
-                                  .work-item {
-                                      width: 100%;
-                                      margin: 0 0 30px;
-                                  }
-                                  .overlay-content {
-                                      font-size: 0.8rem;
-                                      padding: 5px;
-                                  }
-                                  .overlay-content h3 {
-                                      font-size: 1.2rem;
-                                      margin-bottom: 5px;
-                                  }
-                                  .overlay-content p {
-                                      font-size: 0.8rem;
-                                      margin-bottom: 10px;
-                                  }
-                                  .overlay-content a {
-                                      font-size: 0.8rem;
-                                      padding: 5px 10px;
-                                  }
-                              }
-                              /* Hamburger menu styles */
-                              
-                              nav {
-                                  display: flex;
-                                  justify-content: space-between;
-                                  align-items: center;
-                              }
-                              
-                              .menu-icon {
-                                  display: flex;
-                                  flex-direction: column;
-                                  justify-content: center;
-                                  align-items: center;
-                                  width: 40px;
-                                  height: 40px;
-                                  cursor: pointer;
-                                  margin-right: 20px;
-                              }
-                              
-                              .menu-icon__line {
-                                  display: block;
-                                  width: 100%;
-                                  height: 2px;
-                                  background-color: #000;
-                                  margin: 4px 0;
-                                  transition: transform 0.3s ease-in-out;
-                              }
-                              
-                              .nav-menu {
-                                  display: none;
-                              }
-                              
-                              .nav-menu.active {
-                                  display: block;
-                                  position: absolute;
-                                  top: 70px;
-                                  right: 0;
-                                  background-color: #fff;
-                                  border: 1px solid #000;
-                                  padding: 20px;
-                                  z-index: 1;
-                              }
-                              
-                              .nav-menu ul {
-                                  display: flex;
-                                  flex-direction: column;
-                                  align-items: center;
-                              }
-                              
-                              .nav-menu li {
-                                  margin-bottom: 10px;
-                              }
-                              
-                              .nav-menu a {
-                                  color: #000;
-                                  font-size: 1.2rem;
-                                  text-transform: uppercase;
-                                  text-decoration: none;
-                                  letter-spacing: 1px;
-                                  transition: color 0.3s ease-in-out;
-                              }
-                              
-                              .nav-menu a:hover {
-                                  color: #c20b0b;
-                              }
-                              /* ABOUT ME for mobile layout*/
-                              
-                              .about {
-                                  background-color: #fff;
-                                  padding: 100px 0;
-                                  text-align: center;
-                              }
-                              
-                              .about-content {
-                                  display: flex;
-                                  flex-wrap: wrap;
-                                  justify-content: center;
-                                  align-items: center;
-                              }
-                              
-                              .about-image {
-                                  flex: 1;
-                                  max-width: 500px;
-                                  margin-top: 50px;
-                              }
-                              
-                              .about-image img {
-                                  width: 100%;
-                                  height: auto;
-                                  border-radius: var(--border-radius);
-                                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                              }
-                              
-                              .about-text {
-                                  flex: 1;
-                                  max-width: 600px;
-                                  margin-top: 50px;
-                                  text-align: justify;
-                              }
-                              
-                              .about-text p {
-                                  font-size: 18px;
-                                  line-height: 1.5;
-                                  margin-bottom: 30px;
-                              }
-                              
-                              @media screen and (max-width: 768px) {
-                                  .menu-icon {
-                                      margin-right: 30px;
-                                  }
-                              }
-                              
-                              @media screen and (max-width: 768px) {
-                                  .about-content {
-                                      flex-direction: column;
-                                  }
-                              }
-                              
-                              @media screen and (max-width: 768px) {
-                                  .about-image,
-                                  .about-text {
-                                      max-width: 100%;
-                                      margin-top: 0;
-                                  }
-                                  .about-text p {
-                                      font-size: 16px;
-                                  }
-                              }
-                              /* Desktop Styles */
-                              
-                              .home {
-                                  background-color: #f7f7f7;
-                              }
-                              
-                              .home-content {
-                                  color: #fff;
-                                  text-align: center;
-                              }
-                              
-                              .home-content h1 {
-                                  color: #fff;
-                                  font-size: 3rem;
-                              }
-                              
-                              .home-content p {
-                                  color: #fff;
-                                  font-size: 1.5rem;
-                                  max-width: 800px;
-                                  margin: 0 auto 40px;
-                              }
-                              
-                              .btn {
-                                  background-color: #f2463a;
-                                  color: #fff;
-                              }
-                              
-                              .btn:hover {
-                                  background-color: #ff5a4c;
-                              }
-                              /* Mobile Styles */
-                              
-                              @media screen and (max-width: 576px) {
-                                  .home-content {
-                                      font-size: 1.2rem;
-                                  }
-                                  .home-content h1 {
-                                      font-size: 2rem;
-                                  }
-                                  .home-content p {
-                                      font-size: 1rem;
-                                  }
-                              }
-                              /* more cat stuff for hiding*/
-                              
-                              .hidden {
-                                  display: none;
-                              }
+                                                                             :root {
+                                                                            --main-font: 'Poppins', sans-serif;
+                                                                            --text-color: #333;
+                                                                            --primary-color: #3a3a3a;
+                                                                            --secondary-color: #f8f8f8;
+                                                                            --accent-color: #f2463a;
+                                                                            --border-radius: 5px;
+                                                                        }
+                                                                        
+                                                                        body {
+                                                                            font-family: var(--main-font);
+                                                                            font-size: 16px;
+                                                                            color: var(--text-color);
+                                                                            line-height: 1.5;
+                                                                            background-color: var(--secondary-color);
+                                                                            margin: 0;
+                                                                            padding: 0;
+                                                                        }
+                                                                        
+                                                                        h1,
+                                                                        h2,
+                                                                        h3,
+                                                                        h4,
+                                                                        h5,
+                                                                        h6 {
+                                                                            font-weight: 700;
+                                                                            margin: 0;
+                                                                            padding: 0;
+                                                                        }
+                                                                        
+                                                                        a {
+                                                                            color: var(--accent-color);
+                                                                            text-decoration: none;
+                                                                            transition: color 0.3s ease-in-out;
+                                                                        }
+                                                                        
+                                                                        a:hover {
+                                                                            color: darken(var(--accent-color), 10%);
+                                                                        }
+                                                                        
+                                                                        ul {
+                                                                            list-style: none;
+                                                                            margin: 0;
+                                                                            padding: 0;
+                                                                        }
+                                                                        
+                                                                        .container {
+                                                                            max-width: 1200px;
+                                                                            margin: 0 auto;
+                                                                            padding: 0 30px;
+                                                                        }
+                                                                        /* Header */
+                                                                        
+                                                                        header {
+                                                                            background-color: var(--secondary-color);
+                                                                            position: fixed;
+                                                                            width: 100%;
+                                                                            z-index: 1;
+                                                                        }
+                                                                        
+                                                                        nav {
+                                                                            display: flex;
+                                                                            justify-content: space-between;
+                                                                            align-items: center;
+                                                                            max-width: 1200px;
+                                                                            margin: 0 auto;
+                                                                            padding: 15px;
+                                                                        }
+                                                                        
+                                                                        nav a {
+                                                                            color: var(--text-color);
+                                                                            text-decoration: none;
+                                                                            font-weight: bold;
+                                                                            font-size: 18px;
+                                                                        }
+                                                                        
+                                                                        .nav-links {
+                                                                            display: flex;
+                                                                            justify-content: space-between;
+                                                                            align-items: center;
+                                                                        }
+                                                                        
+                                                                        .nav-links li {
+                                                                            margin-right: 20px;
+                                                                        }
+                                                                        
+                                                                        .nav-links li:last-of-type {
+                                                                            margin-right: 0;
+                                                                        }
+                                                                        
+                                                                        .hero-section {
+                                                                            min-height: 90vh;
+                                                                            display: flex;
+                                                                            justify-content: center;
+                                                                            align-items: center;
+                                                                            background-color: var(--primary-color);
+                                                                            color: #fff;
+                                                                            position: relative;
+                                                                        }
+                                                                        
+                                                                        .hero-section:before {
+                                                                            content: "";
+                                                                            display: block;
+                                                                            position: absolute;
+                                                                            top: 0;
+                                                                            right: 0;
+                                                                            bottom: 0;
+                                                                            left: 0;
+                                                                            background: rgba(0, 0, 0, 0.3);
+                                                                        }
+                                                                        
+                                                                        .hero-content {
+                                                                            max-width: 800px;
+                                                                            text-align: center;
+                                                                            z-index: 2;
+                                                                        }
+                                                                        
+                                                                        .hero-heading {
+                                                                            font-size: 5rem;
+                                                                            margin-bottom: 20px;
+                                                                        }
+                                                                        
+                                                                        .hero-subheading {
+                                                                            font-size: 2rem;
+                                                                            margin-bottom: 30px;
+                                                                        }
+                                                                        
+                                                                        .hero-btn {
+                                                                            margin-top: 40px;
+                                                                        }
+                                                                        
+                                                                        .work-gallery {
+                                                                            margin-top: 3rem;
+                                                                        }
+                                                                        
+                                                                        .work-item {
+                                                                            position: relative;
+                                                                            overflow: hidden;
+                                                                            border-radius: 5px;
+                                                                        }
+                                                                        
+                                                                        .work-item img {
+                                                                            display: block;
+                                                                            width: 100%;
+                                                                            height: auto;
+                                                                            transition: transform 0.3s ease-in-out;
+                                                                        }
+                                                                        
+                                                                        .work-item:hover img {
+                                                                            transform: scale(1.1);
+                                                                        }
+                                                                        
+                                                                        .work-item .work-item-overlay {
+                                                                            position: absolute;
+                                                                            top: 0;
+                                                                            left: 0;
+                                                                            width: 100%;
+                                                                            height: 100%;
+                                                                            display: flex;
+                                                                            justify-content: center;
+                                                                            align-items: center;
+                                                                            background-color: rgba(0, 0, 0, 0.8);
+                                                                            opacity: 0;
+                                                                            transition: opacity 0.3s ease-in-out;
+                                                                        }
+                                                                        
+                                                                        .work-item-wrapper {
+                                                                            display: grid;
+                                                                            grid-template-columns: repeat(3, minmax(0, 1fr));
+                                                                            grid-gap: 1rem;
+                                                                            margin-top: 2rem;
+                                                                        }
+                                                                        
+                                                                        .work-item:hover .work-item-overlay {
+                                                                            opacity: 1;
+                                                                        }
+                                                                        
+                                                                        .work-item .overlay-content {
+                                                                            color: #fff;
+                                                                            text-align: center;
+                                                                        }
+                                                                        
+                                                                        .work-item .overlay-content h3 {
+                                                                            font-size: 2rem;
+                                                                            margin-bottom: 1rem;
+                                                                        }
+                                                                        
+                                                                        .work-item .overlay-content p {
+                                                                            font-size: 1.2rem;
+                                                                            margin-bottom: 2rem;
+                                                                        }
+                                                                        
+                                                                        .work-item .work-item-wrapper {
+                                                                            display: grid;
+                                                                            grid-template-columns: repeat(3, 1fr);
+                                                                            grid-gap: 1rem;
+                                                                            margin-top: 2rem;
+                                                                        }
+                                                                        
+                                                                        .work-info {
+                                                                            background-color: #fff;
+                                                                            padding: 1.5rem;
+                                                                            border-radius: 5px;
+                                                                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                                                                            text-align: center;
+                                                                        }
+                                                                        
+                                                                        .work-info h4 {
+                                                                            font-size: 1.5rem;
+                                                                            margin-bottom: 0.5rem;
+                                                                        }
+                                                                        
+                                                                        .work-info p {
+                                                                            font-size: 1.2rem;
+                                                                            color: #555;
+                                                                            margin-bottom: 1rem;
+                                                                        }
+                                                                        
+                                                                        .work-info a {
+                                                                            display: inline-block;
+                                                                            background-color: #007bff;
+                                                                            color: #fff;
+                                                                            text-decoration: none;
+                                                                            padding: 0.5rem 1.5rem;
+                                                                            border-radius: 5px;
+                                                                            transition: background-color 0.3s ease-in-out;
+                                                                        }
+                                                                        
+                                                                        .work-info a:hover {
+                                                                            background-color: #0069d9;
+                                                                        }
+                                                                        /* Contact section */
+                                                                        
+                                                                        .contact {
+                                                                            min-height: calc(100vh - 60px);
+                                                                            display: flex;
+                                                                            justify-content: center;
+                                                                            align-items: center;
+                                                                            background-color: var(--secondary-color);
+                                                                            padding: 2rem;
+                                                                            flex-direction: column;
+                                                                        }
+                                                                        
+                                                                        .contact-form {
+                                                                            max-width: 600px;
+                                                                            margin-bottom: 2rem;
+                                                                            display: flex;
+                                                                            flex-direction: column;
+                                                                        }
+                                                                        
+                                                                        .contact-form label {
+                                                                            margin-bottom: 0.5rem;
+                                                                        }
+                                                                        
+                                                                        .contact-form input,
+                                                                        .contact-form textarea {
+                                                                            padding: 0.5rem;
+                                                                            border-radius: var(--border-radius);
+                                                                            border: none;
+                                                                            margin-bottom: 1rem;
+                                                                        }
+                                                                        
+                                                                        .contact-form textarea {
+                                                                            height: 150px;
+                                                                        }
+                                                                        
+                                                                        .contact-form input[type="submit"] {
+                                                                            background-color: var(--primary-color);
+                                                                            color: #fff;
+                                                                            border: none;
+                                                                            padding: 0.5rem 1.5rem;
+                                                                            border-radius: var(--border-radius);
+                                                                            cursor: pointer;
+                                                                            transition: background-color 0.3s ease-in-out;
+                                                                        }
+                                                                        
+                                                                        .contact-form input[type="submit"]:hover {
+                                                                            background-color: darken(var(--primary-color), 10%);
+                                                                        }
+                                                                        
+                                                                        .contact-info {
+                                                                            display: flex;
+                                                                            justify-content: center;
+                                                                            align-items: center;
+                                                                        }
+                                                                        
+                                                                        .contact-info__item {
+                                                                            margin: 0 1rem;
+                                                                            text-align: center;
+                                                                        }
+                                                                        
+                                                                        .contact-info__item h4 {
+                                                                            font-size: 1.2rem;
+                                                                            margin-bottom: 0.5rem;
+                                                                        }
+                                                                        
+                                                                        .contact-info__item p {
+                                                                            font-size: 1rem;
+                                                                            margin-bottom: 0.5rem;
+                                                                        }
+                                                                        
+                                                                        .contact-info__item svg {
+                                                                            height: 40px;
+                                                                            width: 40px;
+                                                                            margin-bottom: 0.5rem;
+                                                                        }
+                                                                        
+                                                                        .contact-info__item svg path {
+                                                                            fill: var(--primary-color);
+                                                                        }
+                                                                        /* Footer */
+                                                                        
+                                                                        footer {
+                                                                            background-color: var(--primary-color);
+                                                                            color: #fff;
+                                                                            text-align: center;
+                                                                            padding: 2rem;
+                                                                        }
+                                                                        
+                                                                        footer p {
+                                                                            font-size: 1.2rem;
+                                                                            margin-bottom: 0.5rem;
+                                                                        }
+                                                                        
+                                                                        footer a {
+                                                                            color: #fff;
+                                                                            text-decoration: none;
+                                                                            transition: color 0.3s ease-in-out;
+                                                                        }
+                                                                        
+                                                                        footer a:hover {
+                                                                            color: #f5f5f5;
+                                                                        }
+                                                                        /* Home section */
+                                                                        
+                                                                        .home {
+                                                                            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/smokymountains.jpg') center/cover no-repeat fixed;
+                                                                            height: 100vh;
+                                                                            display: flex;
+                                                                            justify-content: center;
+                                                                            align-items: center;
+                                                                            text-align: center;
+                                                                            color: #fff;
+                                                                            font-size: 3rem;
+                                                                            text-shadow: 2px 2px 4px #000000;
+                                                                        }
+                                                                        
+                                                                        .home-content {
+                                                                            padding-top: 100px;
+                                                                        }
+                                                                        
+                                                                        .home-content {
+                                                                            max-width: 800px;
+                                                                            margin: 0 auto;
+                                                                        }
+                                                                        
+                                                                        .home h1 {
+                                                                            font-size: 5rem;
+                                                                            margin-bottom: 1rem;
+                                                                        }
+                                                                        
+                                                                        .home p {
+                                                                            font-size: 2rem;
+                                                                            margin-bottom: 2rem;
+                                                                        }
+                                                                        
+                                                                        .home .btn {
+                                                                            display: inline-block;
+                                                                            padding: 1rem 2rem;
+                                                                            font-size: 2rem;
+                                                                            background-color: #007bff;
+                                                                            color: #fff;
+                                                                            border: none;
+                                                                            border-radius: 5px;
+                                                                            cursor: pointer;
+                                                                            transition: background-color 0.3s ease-in-out;
+                                                                        }
+                                                                        
+                                                                        .home .btn:hover {
+                                                                            background-color: #0069d9;
+                                                                        }
+                                                                        
+                                                                        .home-text {
+                                                                            max-width: 600px;
+                                                                            margin-right: 30px;
+                                                                        }
+                                                                        
+                                                                        .home-heading {
+                                                                            font-size: 3rem;
+                                                                            margin-bottom: 30px;
+                                                                            line-height: 1.2;
+                                                                            color: var(--tertiary-color);
+                                                                        }
+                                                                        
+                                                                        .home-subheading {
+                                                                            font-size: 1.5rem;
+                                                                            margin-bottom: 30px;
+                                                                            line-height: 1.5;
+                                                                            color: var(--text-color);
+                                                                        }
+                                                                        
+                                                                        .home-btn {
+                                                                            margin-top: 20px;
+                                                                        }
+                                                                        
+                                                                        .project-wrapper {
+                                                                            display: grid;
+                                                                            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                                                                            grid-gap: 1rem;
+                                                                            margin-top: 3rem;
+                                                                        }
+                                                                        
+                                                                        .project-card {
+                                                                            background-color: #fff;
+                                                                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                                                                            padding: 1.5rem;
+                                                                            text-align: center;
+                                                                            border-radius: 5px;
+                                                                            overflow: hidden;
+                                                                        }
+                                                                        
+                                                                        .project-card img {
+                                                                            width: 100%;
+                                                                            height: auto;
+                                                                            margin-bottom: 1rem;
+                                                                        }
+                                                                        
+                                                                        .project-card h3 {
+                                                                            font-size: 1.5rem;
+                                                                            margin-bottom: 0.5rem;
+                                                                        }
+                                                                        
+                                                                        .project-card p {
+                                                                            font-size: 1.2rem;
+                                                                            color: #555;
+                                                                            margin-bottom: 1rem;
+                                                                        }
+                                                                        
+                                                                        .project-card a {
+                                                                            display: inline-block;
+                                                                            background-color: #007bff;
+                                                                            color: #fff;
+                                                                            text-decoration: none;
+                                                                            padding: 0.5rem 1.5rem;
+                                                                            border-radius: 5px;
+                                                                            transition: background-color 0.3s ease-in-out;
+                                                                        }
+                                                                        
+                                                                        .project-card a:hover {
+                                                                            background-color: #0069d9;
+                                                                        }
+                                                                        
+                                                                        .project-card:hover {
+                                                                            transform: translateY(-10px);
+                                                                            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+                                                                        }
+                                                                        
+                                                                        .project-card:hover a {
+                                                                            background-color: #0056b3;
+                                                                        }
+                                                                        
+                                                                        .project-card:hover p {
+                                                                            color: #333;
+                                                                        }
+                                                                        
+                                                                        .project-card__overlay {
+                                                                            opacity: 0;
+                                                                            position: absolute;
+                                                                            top: 0;
+                                                                            left: 0;
+                                                                            right: 0;
+                                                                            bottom: 0;
+                                                                            background-color: rgba(0, 0, 0, 0.5);
+                                                                            display: flex;
+                                                                            justify-content: center;
+                                                                            align-items: center;
+                                                                            transition: opacity 0.3s ease-in-out;
+                                                                        }
+                                                                        
+                                                                        .project-card__overlay:hover {
+                                                                            opacity: 1;
+                                                                        }
+                                                                        
+                                                                        .project-card__overlay-text {
+                                                                            color: #fff;
+                                                                            font-size: 1.2rem;
+                                                                            text-align: center;
+                                                                        }
+                                                                        /* About section */
+                                                                        
+                                                                        .about {
+                                                                            padding: 25px 0;
+                                                                            background-color: #fff;
+                                                                        }
+                                                                        
+                                                                        #about h2 {
+                                                                            padding-top: 120px;
+                                                                            /* Adjust this value as needed */
+                                                                        }
+                                                                        
+                                                                        .about-content {
+                                                                            display: flex;
+                                                                            justify-content: space-between;
+                                                                            align-items: center;
+                                                                            flex-wrap: wrap;
+                                                                            margin-top: 50px;
+                                                                        }
+                                                                        
+                                                                        .about-text {
+                                                                            flex: 1;
+                                                                            margin-right: 30px;
+                                                                        }
+                                                                        
+                                                                        .about-image {
+                                                                            flex: 1;
+                                                                            max-width: 400px;
+                                                                            margin-top: 30px;
+                                                                        }
+                                                                        
+                                                                        .about-image img {
+                                                                            width: 100%;
+                                                                            height: auto;
+                                                                        }
+                                                                        
+                                                                        .about-content {
+                                                                            display: flex;
+                                                                            justify-content: space-between;
+                                                                            align-items: center;
+                                                                            flex-wrap: wrap;
+                                                                            margin-top: 50px;
+                                                                            flex-direction: row-reverse;
+                                                                            /* Reverse the order of flex items */
+                                                                        }
+                                                                        
+                                                                        .about-image {
+                                                                            flex: 1;
+                                                                            max-width: 40%;
+                                                                            margin-top: 30px;
+                                                                            margin-left: 30px;
+                                                                            /* Add some margin to the left */
+                                                                        }
+                                                                        
+                                                                        .section-heading h2 {
+                                                                            display: flex;
+                                                                            font-size: 3rem;
+                                                                            justify-content: center;
+                                                                            margin-bottom: 30px;
+                                                                            line-height: 1.2;
+                                                                            color: var(--tertiary-color);
+                                                                        }
+                                                                        
+                                                                        .section-heading p {
+                                                                            display: flex;
+                                                                            justify-content: center;
+                                                                            font-size: 1.5rem;
+                                                                            margin-bottom: 30px;
+                                                                            line-height: 1.5;
+                                                                            color: var(--text-color);
+                                                                        }
+                                                                        
+                                                                        .about-text p {
+                                                                            font-size: 1.2rem;
+                                                                            color: #555;
+                                                                            margin-bottom: 1.5rem;
+                                                                        }
+                                                                        /* About section */
+                                                                        
+                                                                        .about-section {
+                                                                            background-color: #fff;
+                                                                            padding: 100px 0;
+                                                                        }
+                                                                        
+                                                                        .about-content {
+                                                                            display: flex;
+                                                                            justify-content: space-between;
+                                                                            align-items: center;
+                                                                            flex-wrap: wrap;
+                                                                        }
+                                                                        
+                                                                        .about-text {
+                                                                            flex: 1;
+                                                                            max-width: 600px;
+                                                                        }
+                                                                        
+                                                                        .about-text h2 {
+                                                                            font-size: 3rem;
+                                                                            margin-bottom: 30px;
+                                                                            line-height: 1.2;
+                                                                            color: var(--primary-color);
+                                                                        }
+                                                                        
+                                                                        .about-text p {
+                                                                            font-size: 1.2rem;
+                                                                            margin-bottom: 30px;
+                                                                            line-height: 1.5;
+                                                                            color: var(--text-color);
+                                                                        }
+                                                                        
+                                                                        .about-text a {
+                                                                            display: inline-block;
+                                                                            padding: 10px 20px;
+                                                                            background-color: var(--primary-color);
+                                                                            color: #fff;
+                                                                            border-radius: var(--border-radius);
+                                                                            transition: background-color 0.3s ease-in-out;
+                                                                            text-decoration: none;
+                                                                            font-size: 1.2rem;
+                                                                        }
+                                                                        
+                                                                        .about-text a:hover {
+                                                                            background-color: darken(var(--primary-color), 10%);
+                                                                        }
+                                                                        
+                                                                        .about-image {
+                                                                            flex: 1;
+                                                                            max-width: 500px;
+                                                                            margin-top: 50px;
+                                                                        }
+                                                                        
+                                                                        .about-image img {
+                                                                            width: 100%;
+                                                                            height: auto;
+                                                                            border-radius: var(--border-radius);
+                                                                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                                                                        }
+                                                                        
+                                                                        footer {
+                                                                            background-color: #222;
+                                                                            color: #fff;
+                                                                            padding: 30px 0;
+                                                                        }
+                                                                        
+                                                                        .footer-content {
+                                                                            display: flex;
+                                                                            justify-content: space-between;
+                                                                            align-items: center;
+                                                                        }
+                                                                        
+                                                                        .social-icons a {
+                                                                            color: #fff;
+                                                                            font-size: 1.5rem;
+                                                                            margin-right: 15px;
+                                                                            transition: color 0.3s ease-in-out;
+                                                                        }
+                                                                        
+                                                                        .social-icons a.highlight {
+                                                                            transform: scale(1.2);
+                                                                        }
+                                                                        
+                                                                        .social-icons a:hover {
+                                                                            color: #5b5eff;
+                                                                        }
+                                                                        
+                                                                        .animate {
+                                                                            opacity: 0;
+                                                                            transform: translateY(50px);
+                                                                            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+                                                                        }
+                                                                        
+                                                                        .animate.animated {
+                                                                            opacity: 1;
+                                                                            transform: translateY(0);
+                                                                        }
+                                                                        
+                                                                        .home {
+                                                                            background-color: #f7f7f7;
+                                                                        }
+                                                                        
+                                                                        .home-content {
+                                                                            color: #fff;
+                                                                        }
+                                                                        
+                                                                        .home-content h1 {
+                                                                            color: #fff;
+                                                                        }
+                                                                        
+                                                                        .home-content p {
+                                                                            color: #fff;
+                                                                        }
+                                                                        
+                                                                        .btn {
+                                                                            background-color: #f2463a;
+                                                                            color: #fff;
+                                                                        }
+                                                                        
+                                                                        .btn:hover {
+                                                                            background-color: #ff5a4c;
+                                                                        }
+                                                                        
+                                                                        .cat {
+                                                                            position: absolute;
+                                                                            top: 50%;
+                                                                            left: -50px;
+                                                                            width: 100px;
+                                                                            height: 100px;
+                                                                            background-size: contain;
+                                                                            animation: cat-walk 10s linear infinite;
+                                                                        }
+                                                                        
+                                                                        @keyframes cat-walk {
+                                                                            0% {
+                                                                                transform: translateX(0) scaleX(-1);
+                                                                            }
+                                                                            50% {
+                                                                                transform: translateX(calc(100vw + 100px)) scaleX(-1);
+                                                                            }
+                                                                            100% {
+                                                                                transform: translateX(0) scaleX(-1);
+                                                                            }
+                                                                        }
+                                                                        
+                                                                        @keyframes wiggle {
+                                                                            0% {
+                                                                                transform: rotate(0);
+                                                                            }
+                                                                            10% {
+                                                                                transform: rotate(-10deg);
+                                                                            }
+                                                                            20% {
+                                                                                transform: rotate(10deg);
+                                                                            }
+                                                                            30% {
+                                                                                transform: rotate(-10deg);
+                                                                            }
+                                                                            40% {
+                                                                                transform: rotate(10deg);
+                                                                            }
+                                                                            50% {
+                                                                                transform: rotate(0);
+                                                                            }
+                                                                        }
+                                                                        /* Mobile Styles */
+                                                                        
+                                                                        .work-item-wrapper {
+                                                                            display: flex;
+                                                                            flex-wrap: wrap;
+                                                                            justify-content: center;
+                                                                        }
+                                                                        
+                                                                        .work-item {
+                                                                            position: relative;
+                                                                            width: 100%;
+                                                                            max-width: 400px;
+                                                                            height: auto;
+                                                                            margin: 0 10px 30px;
+                                                                        }
+                                                                        
+                                                                        .work-item img {
+                                                                            width: 100%;
+                                                                            height: auto;
+                                                                        }
+                                                                        
+                                                                        .overlay-content {
+                                                                            position: absolute;
+                                                                            top: 50%;
+                                                                            left: 50%;
+                                                                            transform: translate(-50%, -50%);
+                                                                            background: rgba(0, 0, 0, 0.8);
+                                                                            color: #fff;
+                                                                            padding: 10px;
+                                                                            text-align: center;
+                                                                            width: 80%;
+                                                                            max-width: 600px;
+                                                                        }
+                                                                        
+                                                                        .overlay-content h3 {
+                                                                            font-size: 1.5rem;
+                                                                            margin-bottom: 10px;
+                                                                        }
+                                                                        
+                                                                        .overlay-content p {
+                                                                            font-size: 1rem;
+                                                                            margin-bottom: 10px;
+                                                                            word-wrap: break-word;
+                                                                        }
+                                                                        
+                                                                        .overlay-content a {
+                                                                            font-size: 1rem;
+                                                                            padding: 10px 20px;
+                                                                            border: 2px solid #fff;
+                                                                            text-transform: uppercase;
+                                                                            letter-spacing: 1px;
+                                                                            transition: all 0.3s ease;
+                                                                            display: inline-block;
+                                                                        }
+                                                                        
+                                                                        .overlay-content a:hover {
+                                                                            background: #fff;
+                                                                            color: #000;
+                                                                        }
+                                                                        
+                                                                        @media screen and (max-width: 768px) {
+                                                                            .work-item {
+                                                                                width: 45%;
+                                                                                margin: 0 5px 30px;
+                                                                            }
+                                                                            .overlay-content {
+                                                                                font-size: 0.8rem;
+                                                                                padding: 5px;
+                                                                            }
+                                                                        }
+                                                                        
+                                                                        @media screen and (max-width: 576px) {
+                                                                            .work-item {
+                                                                                width: 100%;
+                                                                                margin: 0 0 30px;
+                                                                            }
+                                                                            .overlay-content {
+                                                                                font-size: 0.8rem;
+                                                                                padding: 5px;
+                                                                            }
+                                                                            .overlay-content h3 {
+                                                                                font-size: 1.2rem;
+                                                                                margin-bottom: 5px;
+                                                                            }
+                                                                            .overlay-content p {
+                                                                                font-size: 0.8rem;
+                                                                                margin-bottom: 10px;
+                                                                            }
+                                                                            .overlay-content a {
+                                                                                font-size: 0.8rem;
+                                                                                padding: 5px 10px;
+                                                                            }
+                                                                        }
+                                                                        /* Hamburger menu styles */
+                                                                        
+                                                                        nav {
+                                                                            display: flex;
+                                                                            justify-content: space-between;
+                                                                            align-items: center;
+                                                                        }
+                                                                        
+                                                                        .menu-icon {
+                                                                            display: flex;
+                                                                            flex-direction: column;
+                                                                            justify-content: center;
+                                                                            align-items: center;
+                                                                            width: 40px;
+                                                                            height: 40px;
+                                                                            cursor: pointer;
+                                                                            margin-right: 20px;
+                                                                        }
+                                                                        
+                                                                        .menu-icon__line {
+                                                                            display: block;
+                                                                            width: 100%;
+                                                                            height: 2px;
+                                                                            background-color: #000;
+                                                                            margin: 4px 0;
+                                                                            transition: transform 0.3s ease-in-out;
+                                                                        }
+                                                                        
+                                                                        .nav-menu {
+                                                                            display: none;
+                                                                        }
+                                                                        
+                                                                        .nav-menu.active {
+                                                                            display: block;
+                                                                            position: absolute;
+                                                                            top: 70px;
+                                                                            right: 20em;
+                                                                            /* Aligns the dropdown with the right side of the screen */
+                                                                            background-color: #fff;
+                                                                            border: 1px solid #000;
+                                                                            padding: 20px;
+                                                                            z-index: 1;
+                                                                        }
+                                                                        
+                                                                        .nav-menu ul {
+                                                                            display: flex;
+                                                                            flex-direction: column;
+                                                                            align-items: center;
+                                                                        }
+                                                                        
+                                                                        .nav-menu li {
+                                                                            margin-bottom: 10px;
+                                                                        }
+                                                                        
+                                                                        .nav-menu a {
+                                                                            color: #000;
+                                                                            font-size: 1.2rem;
+                                                                            text-transform: uppercase;
+                                                                            text-decoration: none;
+                                                                            letter-spacing: 1px;
+                                                                            transition: color 0.3s ease-in-out;
+                                                                        }
+                                                                        
+                                                                        .nav-menu a:hover {
+                                                                            color: #c20b0b;
+                                                                        }
+                                                                        /* ABOUT ME for mobile layout*/
+                                                                        
+                                                                        .about {
+                                                                            background-color: #fff;
+                                                                            padding: 100px 0;
+                                                                            text-align: center;
+                                                                        }
+                                                                        
+                                                                        .about-content {
+                                                                            display: flex;
+                                                                            flex-wrap: wrap;
+                                                                            justify-content: center;
+                                                                            align-items: center;
+                                                                        }
+                                                                        
+                                                                        .about-image {
+                                                                            flex: 1;
+                                                                            max-width: 500px;
+                                                                            margin-top: 50px;
+                                                                        }
+                                                                        
+                                                                        .about-image img {
+                                                                            width: 100%;
+                                                                            height: auto;
+                                                                            border-radius: var(--border-radius);
+                                                                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                                                                        }
+                                                                        
+                                                                        .about-text {
+                                                                            flex: 1;
+                                                                            max-width: 600px;
+                                                                            margin-top: 50px;
+                                                                            text-align: justify;
+                                                                        }
+                                                                        
+                                                                        .about-text p {
+                                                                            font-size: 18px;
+                                                                            line-height: 1.5;
+                                                                            margin-bottom: 30px;
+                                                                        }
+                                                                        
+                                                                        @media screen and (max-width: 768px) {
+                                                                            .menu-icon {
+                                                                                margin-right: 30px;
+                                                                            }
+                                                                            .nav-menu.active {
+                                                                                display: block;
+                                                                                position: absolute;
+                                                                                top: 5.25em;
+                                                                                right: .01em;
+                                                                                /* Aligns the dropdown with the right side of the screen */
+                                                                                background-color: #fff;
+                                                                                border: 1px solid #000;
+                                                                                padding: 20px;
+                                                                                z-index: 1;
+                                                                            }
+                                                                            @media screen and (max-width: 768px) {
+                                                                                .about-content {
+                                                                                    flex-direction: column;
+                                                                                }
+                                                                            }
+                                                                            @media screen and (max-width: 768px) {
+                                                                                .about-image,
+                                                                                .about-text {
+                                                                                    max-width: 100%;
+                                                                                    margin-top: 0;
+                                                                                }
+                                                                                .about-text p {
+                                                                                    font-size: 16px;
+                                                                                }
+                                                                            }
+                                                                            /* Desktop Styles */
+                                                                            .home {
+                                                                                background-color: #f7f7f7;
+                                                                            }
+                                                                            .home-content {
+                                                                                color: #fff;
+                                                                                text-align: center;
+                                                                            }
+                                                                            .home-content h1 {
+                                                                                color: #fff;
+                                                                                font-size: 3rem;
+                                                                            }
+                                                                            .home-content p {
+                                                                                color: #fff;
+                                                                                font-size: 1.5rem;
+                                                                                max-width: 800px;
+                                                                                margin: 0 auto 40px;
+                                                                            }
+                                                                            .btn {
+                                                                                background-color: #f2463a;
+                                                                                color: #fff;
+                                                                            }
+                                                                            .btn:hover {
+                                                                                background-color: #ff5a4c;
+                                                                            }
+                                                                            /* Mobile Styles */
+                                                                            @media screen and (max-width: 576px) {
+                                                                                .home-content {
+                                                                                    font-size: 1.2rem;
+                                                                                }
+                                                                                .home-content h1 {
+                                                                                    font-size: 2rem;
+                                                                                }
+                                                                                .home-content p {
+                                                                                    font-size: 1rem;
+                                                                                }
+                                                                            }
+                                                                            /* more cat stuff for hiding*/
+                                                                            .hidden {
+                                                                                display: none;
+                                                                            }

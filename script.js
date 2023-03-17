@@ -15,8 +15,9 @@ animateItems.forEach(item => {
     observer.observe(item);
 });
 
+/* Commented out Mars-related code
 const cat = document.createElement("img");
-cat.src = "img/MarsOnMoon.PNG";
+cat.src = "img/MarsOnMoon.png";
 cat.style.position = "fixed";
 cat.style.width = "100px";
 cat.style.top = "70px"; // adjust as needed
@@ -34,16 +35,7 @@ let direction = 1;
 let position = -100;
 
 function animateCat() {
-    position += direction * 1;
-    if (position > window.innerWidth) {
-        direction = -1;
-        cat.style.transform = "scaleX(-1)";
-    }
-    if (position < -100) {
-        direction = 1;
-        cat.style.transform = "scaleX(1)";
-    }
-    cat.style.left = position + "px";
+    ...
 }
 
 function toggleCat() {
@@ -51,9 +43,7 @@ function toggleCat() {
 }
 
 function changeCatColor() {
-    const colors = ["red", "green", "blue", "orange", "purple"];
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    cat.style.filter = `hue-rotate(${Math.floor(Math.random() * 360)}deg) drop-shadow(2px 2px 4px ${randomColor})`;
+    ...
 }
 
 setInterval(() => {
@@ -67,6 +57,7 @@ setInterval(() => {
 setInterval(() => {
     changeCatColor();
 }, 3000);
+*/
 
 const title = document.querySelector('.home-content h1');
 
