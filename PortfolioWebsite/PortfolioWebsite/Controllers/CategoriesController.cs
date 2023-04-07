@@ -1,6 +1,6 @@
 ﻿namespace PortfolioWebsite.Controllers
 {
-    public class CategoryController
+    public class CategorysController
     {
     }
 }
