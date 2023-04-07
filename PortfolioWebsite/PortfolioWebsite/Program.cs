@@ -1,7 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using PortfolioWebsite.Models; // Replace "YourNamespace" with the actual namespace of your Models folder
+
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<PortfolioContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("PortfolioConnection")));
 
 var app = builder.Build();
 
