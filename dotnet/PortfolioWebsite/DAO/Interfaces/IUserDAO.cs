@@ -1,15 +1,16 @@
-﻿// IUserDAO.cs
-using PortfolioWebsite.Models;
-using System.Collections.Generic;
+﻿using PortfolioWebsite.Models;
 
 namespace PortfolioWebsite.DAO.Interfaces
 {
     public interface IUserDAO
     {
-        List<User> GetAllUsers();
-        User GetUserById(int id);
-        void CreateUser(User user);
+        User GetUser(string username);
+        User CreateUser(User user);
         void UpdateUser(User user);
         void DeleteUser(int id);
+        List<User> GetAllUsers();
+        User GetUserById(int id);
+        User AddUser(string username, string password, string role);
+        User DeleteUser(string id);
     }
 }

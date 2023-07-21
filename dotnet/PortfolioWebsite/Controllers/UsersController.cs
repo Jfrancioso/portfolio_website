@@ -1,5 +1,4 @@
-﻿// UsersController.cs
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using PortfolioWebsite.DAO.Interfaces;
 using PortfolioWebsite.Interfaces;
 using PortfolioWebsite.Models;
@@ -19,7 +18,7 @@ namespace PortfolioWebsite.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<User>> GetAllUsers()
+        public IActionResult GetAllUsers()
         {
             List<User> users = _userDAO.GetAllUsers();
 
@@ -28,7 +27,7 @@ namespace PortfolioWebsite.Controllers
                 return NoContent();
             }
 
-            return Ok(users);
+            return Ok(users); // Return the view with the list of users as the model
         }
 
         [HttpGet("{id}")]

@@ -1,5 +1,4 @@
-﻿// Post.cs
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace PortfolioWebsite.Models
@@ -9,6 +8,12 @@ namespace PortfolioWebsite.Models
         public int Id { get; set; }
 
         [Required]
+        public int UserId { get; set; }
+
+        [Required]
+        public int CategoryId { get; set; }
+
+        [Required]
         public string Title { get; set; }
 
         [Required]
@@ -16,5 +21,7 @@ namespace PortfolioWebsite.Models
 
         [Required]
         public DateTime CreatedAt { get; set; }
+
+        public DateTime UpdatedAt { get; set; }
     }
 }
